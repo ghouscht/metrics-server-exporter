@@ -1,0 +1,32 @@
+---
+project_name: metrics-server-exporter
+release:
+  disable: true
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+    main: main.go
+    binary: metrics-server-exporter
+    id: metrics-server-exporter
+archives:
+  - format: zip
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}-{{ .Tag }}"
+    replacements:
+      amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Version }}"
+dockers:
+  - goos: linux
+    goarch: amd64
+    binaries:
+      - "metrics-server-exporter"
+    image_templates:
+      - "ghouscht/metrics-server-exporter:latest"
+      - "ghouscht/metrics-server-exporter:{{ .Version }}"
+    dockerfile: packaging/docker/Dockerfile
