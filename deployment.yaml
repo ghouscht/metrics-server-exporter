@@ -30,7 +30,7 @@ spec:
         app: metrics-server-exporter
     spec:
       containers:
-        - image: ghouscht/metrics-server-exporter:v0.0.1
+        - image: ghouscht/metrics-server-exporter:0.0.1
           imagePullPolicy: Always
           name: metrics-server-exporter
       serviceAccountName: metrics-server-exporter
