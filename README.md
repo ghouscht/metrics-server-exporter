@@ -1,3 +1,7 @@
+This project is archived and no longer maintained. Metrics Server was never meant to be used for non-autoscaling purposes and this
+project was more like a proof of concept back in the time I was working with k8s < 1.18. Since k8s 1.18+ kubelets expose more
+accurate resource usage metrics on `/metrics/resource` endpoint, you can scrape this endpoint instead.
+
 ![ci](https://github.com/ghouscht/metrics-server-exporter/workflows/ci/badge.svg)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/ghouscht/metrics-server-exporter)
 [![Go Report Card](https://goreportcard.com/badge/github.com/ghouscht/metrics-server-exporter)](https://goreportcard.com/report/github.com/ghouscht/metrics-server-exporter)
